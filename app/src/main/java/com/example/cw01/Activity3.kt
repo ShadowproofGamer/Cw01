@@ -1,5 +1,6 @@
 package com.example.cw01
 
+
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +10,10 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.viewbinding.ViewBinding
 import com.example.cw01.databinding.Activity3Binding
 
@@ -27,6 +31,22 @@ class Activity3 : AppCompatActivity(), View.OnLongClickListener {
             startActivity(intent)
         }
     }
+
+    val startCalcForResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+        { result: ActivityResult ->
+            if (result.resultCode == RESULT_OK) {
+            // Handle the Intent:
+                val intent = result.data // the same is: intent = result.getData()
+                val d = intent?.getIntExtra("result",999) //result is id key for data //999 – default value
+
+                if (d != null) {
+                    val str = d.toString()
+                    val tvResult: TextView = findViewById(R.id.tv_result)
+                    tvResult.setText(str)
+                }
+            }
+        }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_3)
@@ -43,6 +63,19 @@ class Activity3 : AppCompatActivity(), View.OnLongClickListener {
             val str1 = et1.getText()
             runDial(str1.toString())
         }
+
+        val button_calc = binding.buttonCalc
+        var et_val1 = binding.etVal1
+        var et_val2 = binding.etVal2
+        var aBundle = Bundle()
+        button_calc.setOnClickListener { view:View ->
+            aBundle.putInt("val1",et_val1.text.toString().toInt())
+            aBundle.putInt("val2",et_val2.text.toString().toInt())
+            val intent = Intent(this, ActivityCalc::class.java)
+            intent.putExtras(aBundle)
+            startCalcForResult.launch(intent)
+        }
+
     }
 
 

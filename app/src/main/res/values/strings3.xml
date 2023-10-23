@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="txt3">String from activity 3</string>
-    <string name="press">Press me long…</string>
+    <string name="press">Press long to exit</string>
     <string name="button_b">Powrót</string>
     <string name="button_dial">Run dialer</string>
+    <string name="button_calc">calculate</string>
+    <string name="result">Result:</string>
 </resources>

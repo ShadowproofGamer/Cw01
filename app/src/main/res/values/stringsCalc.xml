@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_add">Add</string>
+    <string name="button_subtract">Subtract</string>
+    <string name="button_multiply">Multiply</string>
+</resources>
