@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt3">String from activity 3</string>
+    <string name="press">Press me long…</string>
+    <string name="button_b">Powrót</string>
+</resources>
