@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,19 +22,16 @@
         <Switch
             android:id="@+id/switch1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
+            android:gravity="center_vertical"
             android:text="Switch" />
 
     </LinearLayout>
-
     <ImageView
         android:id="@+id/img1"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:visibility="visible"
-        tools:srcCompat="@drawable/img" />
+        app:srcCompat="@drawable/small_bell_11" />
 
 </LinearLayout>

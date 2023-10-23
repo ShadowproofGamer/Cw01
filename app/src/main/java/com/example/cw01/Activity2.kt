@@ -3,11 +3,24 @@ package com.example.cw01
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.View.OnLongClickListener
 import android.widget.CompoundButton
 import android.widget.ImageView
 import android.widget.Switch
 
-class Activity2 : AppCompatActivity() {
+class Activity2 : AppCompatActivity(), OnLongClickListener {
+    lateinit var img1:ImageView
+
+    val swListener = CompoundButton.OnCheckedChangeListener { _, isChecked ->
+        if (isChecked)
+            img1.setVisibility(View.VISIBLE)
+        else
+            img1.setVisibility(View.INVISIBLE)
+    }
+    override fun onLongClick(view: View?): Boolean {
+        onBackPressed(/*view: View*/)
+        return true
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_2)
@@ -18,12 +31,7 @@ class Activity2 : AppCompatActivity() {
         sw.setOnCheckedChangeListener(swListener)
     }
 
-    lateinit var img1:ImageView
 
-    val swListener = CompoundButton.OnCheckedChangeListener { _, isChecked ->
-        if (isChecked)
-            img1.setVisibility(View.VISIBLE)
-        else
-            img1.setVisibility(View.INVISIBLE)
-    }
+
+
 }

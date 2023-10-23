@@ -11,8 +11,36 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:text="@string/txt3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="428dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/button_dial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_dial" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="finishActivity3"
+        android:text="@string/button_b" />
 
     <TextView
         android:id="@+id/textView3"
@@ -21,10 +49,4 @@
         android:layout_weight="1"
         android:text="@string/press" />
 
-    <Button
-        android:id="@+id/button_b"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_b"
-        android:onClick="finishActivity3"/>
 </LinearLayout>

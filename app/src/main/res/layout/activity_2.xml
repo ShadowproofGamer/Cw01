@@ -16,16 +16,16 @@
 
     <ImageView
         android:id="@+id/img1"
-        android:layout_width="wrap_content"
-        android:layout_height="368dp"
-        android:layout_weight="1"
-        tools:srcCompat="@drawable/img" />
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:srcCompat="@drawable/small_bell_11" />
 
     <Switch
         android:id="@+id/switch1"
-        android:layout_width="157dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
         android:layout_weight="1"
         android:gravity="center_horizontal"
         android:text="Switch" />
+
 </LinearLayout>
