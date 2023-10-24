@@ -58,6 +58,7 @@ class Activity3 : AppCompatActivity(), View.OnLongClickListener {
 
         //button_dial = findViewById(R.id.button_dial)
         button_dial = binding.buttonDial
+        et1 = binding.et1
 
         button_dial.setOnClickListener { _ ->
             val str1 = et1.getText()
